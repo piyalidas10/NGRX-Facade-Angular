@@ -1,0 +1,20 @@
+<div class="container">
+    <h4>Groceries</h4>
+    <select (change)="onTypeChange($event)" class="type-select">
+        <option value="">Select type</option>
+        <option value="fruit">Fruit</option>
+        <option value="snacks">Snacks</option>
+        <option value="dairy">Dailry</option>
+    </select>
+    <ul class="grocery-list">
+        @for(groc of (filteredGroceries$ | async)?? (groceries$ | async); track groc.id) {
+          <li class="grocery-item">
+            <span class="increment-button" (click)="increment(groc)">+</span>
+            {{ groc.name }}
+            <span class="decrement-button" (click)="decrement(groc)">-</span>
+          </li>
+        }@empty {
+            <li>loading..</li>
+        }            
+      </ul>
+</div>
