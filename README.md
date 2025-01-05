@@ -2,7 +2,7 @@
 
 https://stackblitz.com/github.com/piyalidas10/NGRX-Facade-Angular
 
-![NGRX with Facade Pattern](https://github.com/piyalidas10/Redux-Angular/blob/0d23471f6371ebad049846d571a42a5413d3cd50/ngrx-facade.png)
+![NGRX with Facade Pattern](https://github.com/piyalidas10/NGRX-Facade-Angular/blob/9f8874b7737521b66526d1f70b168885ff471163/ngrx-facade.png)
 
 The Facade pattern wants to simplify this approach by wrapping the NgRx interactions in one place, allowing the Component to only ever interact with the Facade.
 
