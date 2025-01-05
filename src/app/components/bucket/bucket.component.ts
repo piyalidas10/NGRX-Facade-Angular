@@ -3,6 +3,8 @@ import { Observable } from 'rxjs';
 import { Bucket } from '../../models/bucket.model';
 import { CommonModule } from '@angular/common';
 import { Store } from '@ngrx/store';
+import { selectBuckets } from '../../store/selectors/bucket.selectors';
+import { CommonFacade } from '../../store/facade/common.facade';
 
 
 @Component({
@@ -16,8 +18,8 @@ export class BucketComponent {
 
    myBucket$?:Observable<Bucket[]>; 
 
-   constructor(private store: Store<{ buckets: Bucket[] }>) {
-    this.myBucket$ = this.store.select('buckets');
+   constructor(private commonFacade: CommonFacade) {
+    this.myBucket$ = this.commonFacade.getBuckets();
   }
 
 }
